@@ -41,13 +41,15 @@ In the forked Jekyll template repository, I opened the `_includes` folder and cr
 ![Adding analytics.html](../images/analytics.png)
 
 
-Then, in the `_layouts` folder, I opened the `default.html` file and added `{% include analytics.html %}` tag so that all the blog posts can be tracked by Google Analytics.
+Then, in the `_layouts` folder, I opened the `default.html` file and added `'{% include analytics.html %}'` tag so that all the blog posts can be tracked by Google Analytics.
 
 ![Adding tag in <body>](../images/body.png)
 
 Once the JavaScript tag is added, Google Analytics will be able to communicate with the website and allow traffic data to be recorded.
- 
+
+
 #### Step 3: Access the Google Developer Console
+
 
 I navigated to the [Google Developer Console](https://console.developers.google.com/apis/library) and searched for the `Analytics API` under the menu `Other popular APIs`. On the top right hand corner, I clicked on the `Create New Project` since it was my first time working with any google APIs.
 
