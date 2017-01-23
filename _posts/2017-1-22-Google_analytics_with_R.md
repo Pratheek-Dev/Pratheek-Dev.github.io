@@ -22,6 +22,8 @@ I am using Jekyll to create my blog posts and I would like to perform analytics 
 
 In the forked Jekyll template repository, I opened the `_includes` folder and created `analytics.html` with the following code inside (from the google analytics tracking id):
 
+![trackid](../images/trackid.png)
+
 ```
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -45,11 +47,15 @@ Once the JavaScript tag is added, Google Analytics will be able to communicate w
  
 #### Step 3: Access the Google Developer Console
 
-I navigated to the Google Developer Console (https://console.developers.google.com/apis/library) and searched for the `Analytics API` under the menu `Other popular APIs`. On the top right hand corner, I clicked on the `Create New Project` since it was my first time working with any google APIs.
+I navigated to the [Google Developer Console](https://console.developers.google.com/apis/library) and searched for the `Analytics API` under the menu `Other popular APIs`. On the top right hand corner, I clicked on the `Create New Project` since it was my first time working with any google APIs.
 
-Step 3: Setting up a new project for Analytics API
+![dev console](../images/step2.png)
+
+#### Setting up a new project for Analytics API
 
  I configured my project with a descriptive name and agreed to the `terms and conditions` check box. A project ID was  displayed below the project name.  Finally, I clicked `create` to commence the analytics project.
+
+ ![new project](../images/step3.png)
 
 #### Step 4: Creating Credentials
 
@@ -59,6 +65,14 @@ Now back to the `Application Type` menu, where I selected `other`, and and chose
 
 I now had a `client-id secret` and a `client-id url`. Both of which will be required when authenticating using R.
 
+![client-id](../images/auth.png)
+
 #### Step 5: Setting up a Google Analytics View
 
-I will be using the default Google Analytics Viewer (https://ga-dev-tools.appspot.com/query-explorer/), but you’re welcome to select any other application you would like to work with. The basic idea behind a viewer is to select a website to perform analytics on.
+I will be using the default [GA Dev Tools Analytics Viewer](https://ga-dev-tools.appspot.com/query-explorer/), but you’re welcome to select any other application you would like to work with. The basic idea behind a viewer is to select a website to perform analytics on.
+
+![viewer](../images/query.png)
+
+#### Step 6: Connecting to R using rga
+
+I was finally able to proceed to connecting google analytics with R, using `rga` package.
