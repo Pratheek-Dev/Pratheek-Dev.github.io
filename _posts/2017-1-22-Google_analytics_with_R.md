@@ -5,11 +5,11 @@ title: Using Google Analytics with R and Jekyll
 
 ### Introduction
 
-Google’s developer console has several APIs that can be customized and used for a plethora of development tasks. Some popular APIs include, the Google Maps, Google Cloud, Google Apps and the Google Analytics API. The Google Analytics API provides structured data analytics and reporting tools for clients. For example, with the analytics API, it is possible to access a website’s total bounce rates, popularity, global traffic, and traffic peaks.
+Google’s developer console has several APIs that can be customized and used for a plethora of development tasks. Some popular APIs include, the Google Maps, Google Cloud, Google Apps and the Google Analytics API. The Google Analytics API provides structured data analytics and reporting tools for clients. For example, with the analytics API, it is possible to access a website’s total bounce rates, popularity, global traffic, and traffic peaks. `Jekyll` is a blog post template system for GitHub. I will be incorporating the analytics API with my Jekyll blog template and then access the Google Analytics in RStudio with the `rga` package.
 
 In order to collect the data from the API and work with it programmatically, we can use the R package, `rga` - R Google Analytics.
 
-Let’s being by setting up the basic requirements in Google Developer Console to access the Google Analytics API:
+I'll being by setting up the basic requirements in Google Developer Console to access the Google Analytics API:
 
 #### Step 1: Set up a Google Analytics Account
 
@@ -22,7 +22,7 @@ Ensure you have a google account (i.e. Gmail account) as it will be required bef
 
 I am using Jekyll to create my blog posts and I would like to perform analytics on my blogs. In order to do so, I will be modifying some of the code in the Jekyll default template so that the google-analytics can communicate with my blog traffic data.
 
-In the forked Jekyll template repository, I opened the `_includes` folder and created `analytics.html` with the following code inside (from the google analytics tracking id):
+In the forked Jekyll template repository, I opened the `_includes` folder and created `analytics.html` with the following JavaScript code inside (from the google analytics tracking id):
 
 ![trackid](../images/trackid.png)
 
@@ -71,7 +71,7 @@ I now had a `client-id secret` and a `client-id url`. Both of which will be requ
 
 #### Step 5: Setting up a Google Analytics View
 
-I will be using the default [GA Dev Tools Analytics Viewer](https://ga-dev-tools.appspot.com/query-explorer/), but you’re welcome to select any other application you would like to work with. The basic idea behind a viewer is to select a website to perform analytics on.
+I will be using the default [GA Dev Tools Analytics Viewer](https://ga-dev-tools.appspot.com/query-explorer/), but you’re welcome to select any other application you would like to work with. The basic idea behind a viewer is to select a website to perform various queries to obtain specific.
 
 ![viewer](../images/query.png)
 
