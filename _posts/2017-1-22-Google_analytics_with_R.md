@@ -38,14 +38,11 @@ In the forked Jekyll template repository, I opened the `_includes` folder and cr
 
 </script>
 ```
-![Adding analytics.html](../images/analytics.png)
 
 
-Then, in the `_layouts` folder, I opened the `default.html` file and added the following tag so that all the blog posts can be tracked by Google Analytics:
+Then, in the `_layouts` folder, I opened the `default.html` file and added the following tag before `</body>` so that all the blog posts can be tracked by Google Analytics:
 
-```
-{% include analytics.html %}
-```
+
 
 ![Adding tag in <body>](../images/body.png)
 
@@ -96,7 +93,7 @@ getData <- get_ga(token, profileId = "view id hidden", start.date = "15daysAgo",
        max.results = NULL, include.empty.rows = NULL, fetch.by = NULL)
 ```
 
-Finally, here is a simple plot I created from the data retrieved from google analytics API (Note: since my blog website has zero views, I did not get a very useful graph). The purpose of this was to show how easy it is to obtain website analytics data from the API to the R console within minutes for further statistical analysis. 
+Finally, here is a simple plot I created from the data retrieved from google analytics API (Note: since my blog website has zero views, I did not get a very useful graph). The purpose of this was to show how easy it is to obtain website analytics data from the API to the R console within minutes for further statistical analysis.
 
 ```
 #plot data
