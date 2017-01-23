@@ -15,6 +15,8 @@ Let’s being by setting up the basic requirements in Google Developer Console t
 
 Ensure you have a google account (i.e. Gmail account) as it will be required before proceeding any further. I logged into my google account and proceeded to the [Google Analytics website](https://analytics.google.com/analytics/web/?authuser=0#management/Settings/a90661696w134530349p138597581/%3Fm.page%3DTrackingCode%26_r.ghFlowId%3D6324039/) and created the analytics profile that I want to request data from.
 
+![setup](../images/step1.png)
+
 
 #### Step 2: Set up Analytics with Jekyll
 
@@ -75,4 +77,25 @@ I will be using the default [GA Dev Tools Analytics Viewer](https://ga-dev-tools
 
 #### Step 6: Connecting to R using rga
 
-I was finally able to proceed to connecting google analytics with R, using `rga` package.
+I was finally able to proceed to connecting google analytics with R, using `rga` package. I installed the package with R command `install.packages("RGA")` and loaded the library with `library(RGA)`. I then pasted the authenticating keys and the view keys into an R variable `token`.
+
+```
+# Authenticate Google Analytics
+token <- authorize(client.id = "Hidden client key", client.secret = "secretkey Hidden")
+
+
+getData <- get_ga(token, profileId = "view id hidden", start.date = "15daysAgo",
+       end.date = "yesterday", metrics = c("ga:sessions"," ga:pageviews"),
+       dimensions = "ga:date", sort = NULL, filters = NULL, segment = NULL, samplingLevel = NULL, start.index = NULL,
+       max.results = NULL, include.empty.rows = NULL, fetch.by = NULL)
+```
+
+Finally, here is a simple plot I created from the data retrieved from google analytics API (Note: since my blog website has zero views, I will not be getting a very useful graph just yet)
+
+```
+#plot data
+
+ggplot(getData, aes(date, pageviews))+geom_line()
+```
+
+![](../images/plot.png)
