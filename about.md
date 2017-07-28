@@ -10,4 +10,4 @@ Currently working with BC Stats - A member of BC Public Services developing Natu
 
 [pratheekdevaraj@gmail.com](mailto:pratheekdevaraj@gmail.com)
 
-[linkedin.com/in/pratheekdevaraj](https://www.linkedin.com/in/pratheekdevaraj/) 
+[https://www.linkedin.com/in/pratheekdevaraj] 
